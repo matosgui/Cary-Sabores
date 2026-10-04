@@ -103,7 +103,8 @@ footer .script{font-size:2.4rem;color:#fff}footer ul{list-style:none;padding:0;m
 <section id="monte"><div class="wrap">
 <h2>Monte o seu bolo 🎂</h2><p class="sub">Escolha cada etapa e veja o valor estimado. Depois é só enviar pelo WhatsApp.</p>
 <div class="steps" id="steps"></div>
-<div class="step"><h3><span>6</span>Decoração / personalização</h3><p class="hint">Conte o tema, cores, nome, idade ou referências. Decoração personalizada é combinada com a confeitaria.</p><textarea id="deco" placeholder="Ex.: tema, cores, nome e idade, foto de referência…"></textarea></div>
+<div class="step"><h3><span>6</span>Decoração / personalização</h3><p class="hint">Conte o tema, cores, nome, idade ou referências. Decoração personalizada é combinada com a confeitaria.</p><div class="opts" id="decoOpts" style="margin-bottom:12px"></div><textarea id="deco" placeholder="Ex.: tema, cores, nome e idade, foto de referência…"></textarea></div>
+<div class="step"><h3><span>7</span>Forma de pagamento</h3><p class="hint">O pagamento é combinado direto com a Cary pelo WhatsApp.</p><div class="opts" id="payOpts"></div></div>
 <div class="sum" id="sum" style="margin-top:16px"><h3>Seu bolo</h3><dl id="dl"></dl><div class="total" id="tot"></div><p class="note" id="note"></p><a class="btn wa" id="send">PEDIR PELO WHATSAPP</a></div>
 <div class="tab"><h3 style="font-size:1.3rem;margin-bottom:8px">Tabela de preços (cobertura + recheio simples)</h3><div id="tabela"></div><p class="hint" style="color:var(--muted);font-size:.85rem;margin:10px 0 0">Bolos com recheios especiais a combinar.</p></div>
 </div></section>
@@ -122,7 +123,7 @@ footer .script{font-size:2.4rem;color:#fff}footer ul{list-style:none;padding:0;m
 </main>
 
 <footer><div class="wrap">
-<div><img data-logo alt="Cary Sabores" style="width:90px;height:90px;display:block;margin-bottom:8px"><div class="script">Cary Sabores</div><p>“Bolo é carinho em forma de comida!”</p><p>📍 Iraquara – Bahia<br>📱 WhatsApp: (75) 9 9812-8112<br>📸 Instagram: @carinaazevedo2</p></div>
+<div><img data-logo alt="Cary Sabores" style="width:90px;height:90px;display:block;margin-bottom:8px"><div class="script">Cary Sabores</div><p>“Bolo é carinho em forma de comida!”</p><p>📍 Iraquara – Bahia<br>📱 WhatsApp: (75) 9 9812-8112<br>📸 Instagram: @carinaazevedo2<br>💳 Pagamento: <span id="pagTxt"></span></p></div>
 <ul><li><a href="#inicio">Início</a></li><li><a href="#galeria">Nossos bolos</a></li><li><a href="#monte">Monte seu bolo</a></li><li><a href="#personalizados">Bolos personalizados</a></li><li><a href="#casamento">Bolos de casamento</a></li><li><a href="#doces">Doces e sobremesas</a></li></ul>
 <ul><li><a href="https://www.instagram.com/carinaazevedo2" target="_blank" rel="noopener">Instagram</a></li><li><a data-wa="Olá, Cary Sabores! Gostaria de fazer um pedido.">WhatsApp</a></li><li><a href="#" id="admLink" style="opacity:.55;font-size:.85rem">Área administrativa</a></li></ul>
 </div></footer>
@@ -178,7 +179,7 @@ $('#instaGrid').innerHTML=tiles(D.instaFotos,3,'@carinaazevedo2');
 /* lightbox */
 document.addEventListener('click',e=>{if(e.target.matches('.ph img')){$('#lb img').src=e.target.src;$('#lb').classList.add('on')}else if(e.target.closest('#lb'))$('#lb').classList.remove('on')});
 /* configurador */
-const S={t:null,m:null,c:null,r:new Set,g:new Set,n:false,tp:new Set};
+const S={t:null,m:null,c:null,d:null,pg:null,r:new Set,g:new Set,n:false,tp:new Set};
 const o=(g,i,l,s='')=>`<button class="opt" data-g="${g}" data-i="${i}">${l}<small>${s}</small></button>`;
 $('#steps').innerHTML=[
 ['1','Escolha o tamanho','',D.tamanhos.map((t,i)=>o('t',i,`${t.n} · ${t.cm}cm`,`${t.f} fatias`)).join('')],
@@ -187,11 +188,17 @@ $('#steps').innerHTML=[
 ['4','Escolha a cobertura','O valor depende do tamanho e da massa.',D.coberturas.map((c,i)=>o('c',i,c.n,c.d)).join('')],
 ['5','Geleias e adicionais','Valores variam conforme o tamanho.',D.geleias.sabores.map((g,i)=>o('g',i,'Geleia de '+g.toLowerCase(),'')).join('')+o('n',0,'Nutella','adicional')+D.topos.map((t,i)=>o('tp',i,'Topo: '+t.n,R(t.p))).join('')]
 ].map(s=>`<div class="step"><h3><span>${s[0]}</span>${s[1]}</h3>${s[2]?`<p class="hint">${s[2]}</p>`:''}<div class="opts">${s[3]}</div></div>`).join('');
-$('#steps').onclick=e=>{const b=e.target.closest('.opt');if(!b)return;const g=b.dataset.g,i=+b.dataset.i;
-if(['t','m','c'].includes(g))S[g]=S[g]===i?null:i;else if(g=='n')S.n=!S.n;else S[g].has(i)?S[g].delete(i):S[g].add(i);upd()};
-function sel(g,i){return g=='n'?S.n:['t','m','c'].includes(g)?S[g]===i:S[g].has(i)}
+D.decoracoes=D.decoracoes||[{n:'Básica',d:'Sem trabalho de bico',pct:0},{n:'Completa',d:'Com trabalho de bico, mais elaborada',pct:10}];
+D.pagamentos=D.pagamentos||['Pix','Dinheiro','Cartão'];
+$('#decoOpts').innerHTML=D.decoracoes.map((x,i)=>o('d',i,x.n,(x.d||'')+(x.pct?` · +${x.pct}% no valor`:' · mesmo valor'))).join('');
+$('#payOpts').innerHTML=D.pagamentos.map((x,i)=>o('pg',i,x)).join('');
+$('#pagTxt').textContent=D.pagamentos.join(', ');
+const pick=e=>{const b=e.target.closest('.opt');if(!b)return;const g=b.dataset.g,i=+b.dataset.i;
+if(['t','m','c','d','pg'].includes(g))S[g]=S[g]===i?null:i;else if(g=='n')S.n=!S.n;else S[g].has(i)?S[g].delete(i):S[g].add(i);upd()};
+['#steps','#decoOpts','#payOpts'].forEach(s=>$(s).onclick=pick);
+function sel(g,i){return g=='n'?S.n:['t','m','c','d','pg'].includes(g)?S[g]===i:S[g].has(i)}
 function calc(){const {t,m,c}=S;if(t==null||m==null||c==null)return null;const tb=D.massas[m].t||'branca';let v=D.coberturas[c].p[tb][t];
-S.g.forEach(()=>v+=D.geleias.p[t]);if(S.n)v+=D.nutella[t];S.tp.forEach(i=>v+=D.topos[i].p);return v}
+S.g.forEach(()=>v+=D.geleias.p[t]);if(S.n)v+=D.nutella[t];S.tp.forEach(i=>v+=D.topos[i].p);if(S.d!=null)v*=1+(D.decoracoes[S.d].pct||0)/100;return Math.round(v*100)/100}
 function upd(){document.querySelectorAll('.opt').forEach(b=>b.classList.toggle('on',sel(b.dataset.g,+b.dataset.i)));
 const t=S.t,tb=S.m!=null?(D.massas[S.m].t||'branca'):null;
 document.querySelectorAll('[data-g=c]').forEach(b=>{const p=D.coberturas[+b.dataset.i].p;b.querySelector('small').textContent=D.coberturas[+b.dataset.i].d+(t!=null&&tb?' · '+R(p[tb][t]):'')});
@@ -199,7 +206,7 @@ document.querySelectorAll('[data-g=g]').forEach(b=>b.querySelector('small').text
 const nb=document.querySelector('[data-g=n]');nb.querySelector('small').textContent=t!=null?'adicional · + '+R(D.nutella[t]):'adicional';
 const tm=t!=null?D.tamanhos[t]:null,L=a=>[...a.map?a:[]];
 const rows=[['Tamanho',tm?`${tm.n} · ${tm.cm}cm · ${tm.f} fatias`:'—'],['Massa',S.m!=null?D.massas[S.m].n:'—'],['Recheio(s)',S.r.size?[...S.r].map(i=>D.recheios[i]).join(', '):'—'],['Cobertura',S.c!=null?D.coberturas[S.c].n:'—'],
-['Adicionais',[...[...S.g].map(i=>'Geleia de '+D.geleias.sabores[i].toLowerCase()),...(S.n?['Nutella']:[]),...[...S.tp].map(i=>'Topo de '+D.topos[i].n.toLowerCase())].join(', ')||'—'],['Decoração',$('#deco').value.trim()||'—']];
+['Adicionais',[...[...S.g].map(i=>'Geleia de '+D.geleias.sabores[i].toLowerCase()),...(S.n?['Nutella']:[]),...[...S.tp].map(i=>'Topo de '+D.topos[i].n.toLowerCase())].join(', ')||'—'],['Decoração',[S.d!=null?D.decoracoes[S.d].n:'',$('#deco').value.trim()].filter(Boolean).join(' — ')||'—'],['Pagamento',S.pg!=null?D.pagamentos[S.pg]:'—']];
 $('#dl').innerHTML=rows.map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('');
 const v=calc(),aconf=S.m!=null&&D.massas[S.m].t==null;
 $('#tot').textContent=v==null?'Valor estimado: escolha tamanho, massa e cobertura':'Valor estimado: '+R(v);
@@ -230,6 +237,9 @@ a.innerHTML=`<div class="wrap"><div class="ahead"><h2 style="text-align:left">Ad
 <div class="step"><h3>Fotos</h3><p class="hint">Envie fotos reais e escolha a categoria. Elas são reduzidas automaticamente.</p>
 <div class="ar"><select id="upcat">${fc.slice(1).map(c=>`<option value="${c[0]}">${c[1]}</option>`).join('')}</select><input id="upf" type="file" accept="image/*" multiple></div>
 <div class="grid" style="margin-top:12px">${E.fotos.map((f,i)=>`<div><div class="ph"><img src="${f.src}" alt=""></div><select data-p="fotos.${i}.cat">${fc.slice(1).map(c=>`<option value="${c[0]}" ${f.cat==c[0]?'selected':''}>${c[1]}</option>`).join('')}</select><button class="chip" data-a="del:fotos:${i}">Remover</button></div>`).join('')}</div></div>
+<div class="step"><h3>Logo</h3><div class="ar"><img src="${E.logo}" alt="" style="width:80px;height:80px;border-radius:50%;object-fit:cover"><input id="uplogo" type="file" accept="image/*"></div><p class="hint">Envie a nova logo (de preferência PNG, quadrada). Depois clique em Salvar alterações.</p></div>
+<div class="step"><h3>Decoração</h3><p class="hint">Acréscimo em % sobre o valor do bolo (0 = mantém o valor).</p>${lst('decoracoes',E.decoracoes,(x,i)=>inp(`decoracoes.${i}.n`,x.n)+inp(`decoracoes.${i}.d`,x.d,'text','placeholder="Descrição"')+inp(`decoracoes.${i}.pct`,x.pct,'number','style="width:90px" placeholder="%"'))}</div>
+<div class="step"><h3>Formas de pagamento</h3>${lst('pagamentos',E.pagamentos,(x,i)=>inp('pagamentos.'+i,x))}</div>
 <div class="step"><h3>Senha</h3><input id="newpw" type="password" placeholder="Nova senha (deixe vazio para manter)"></div>
 <div class="ctas" style="margin:20px 0"><button class="btn" data-a="save">SALVAR ALTERAÇÕES</button></div><p id="amsg" class="hint"></p></div>`;a.scrollTop=y}
 const msg=t=>{$('#amsg').textContent=t};
@@ -239,13 +249,14 @@ a.innerHTML=`<div class="wrap" style="max-width:380px;padding-top:80px;text-alig
 const api=async b=>{try{const r=await fetch('/api/data',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(b)});const j=await r.json().catch(()=>({}));return r.ok?{ok:true}:{err:j.error||'Erro '+r.status}}catch(x){return{err:'Sem conexão com o servidor.'}}};
 async function save(){msg('Salvando…');const np=$('#newpw').value,r=await api({action:'save',password:PW,data:E,newPassword:np||undefined});
 if(r.ok){if(np)PW=np;msg('Salvo! Atualizando a página…');setTimeout(()=>location.reload(),800)}else msg(r.err)}
-function img(f){return new Promise(r=>{const i=new Image();i.onload=()=>{const s=Math.min(1,1000/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*s;c.height=i.height*s;c.getContext('2d').drawImage(i,0,0,c.width,c.height);c.toBlob(r,'image/jpeg',.82)};i.src=URL.createObjectURL(f)})}
-const NEW={gs:['geleias.sabores',''],topos:['topos',{n:'',p:0}],massas:['massas',{n:'',t:null}],recheios:['recheios',''],doces:['doces',{n:'',p:0,d:''}]};
+function img(f,type='image/jpeg',max=1000){return new Promise(r=>{const i=new Image();i.onload=()=>{const s=Math.min(1,max/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*s;c.height=i.height*s;c.getContext('2d').drawImage(i,0,0,c.width,c.height);c.toBlob(r,type,.82)};i.src=URL.createObjectURL(f)})}
+const NEW={decoracoes:['decoracoes',{n:'',d:'',pct:0}],pagamentos:['pagamentos',''],gs:['geleias.sabores',''],topos:['topos',{n:'',p:0}],massas:['massas',{n:'',t:null}],recheios:['recheios',''],doces:['doces',{n:'',p:0,d:''}]};
 const arrOf=k=>k=='gs'?E.geleias.sabores:E[k];
 $('#admLink').onclick=e=>{e.preventDefault();openAdm()};
 const adm=$('#adm');
 adm.addEventListener('input',e=>{const p=e.target.dataset.p;if(!p)return;const v=e.target.type=='number'?(parseFloat(e.target.value)||0):e.target.value;setP(p,p.endsWith('.t')&&v===''?null:v)});
 adm.addEventListener('change',e=>{const p=e.target.dataset.p;if(p&&e.target.tagName=='SELECT')setP(p,p.endsWith('.t')&&!e.target.value?null:e.target.value);
+if(e.target.id=='uplogo')(async()=>{const f=e.target.files[0];if(!f)return;msg('Enviando logo…');try{const r=await fetch('/api/foto',{method:'POST',headers:{'x-admin-password':PW,'content-type':'image/png'},body:await img(f,'image/png',400)}),j=await r.json();if(!r.ok)throw 0;E.logo=j.src;panel();msg('Logo enviada. Clique em Salvar alterações.')}catch(x){msg('Não foi possível enviar a logo.')}})();
 if(e.target.id=='upf')(async()=>{for(const f of e.target.files){msg('Enviando foto…');try{const r=await fetch('/api/foto',{method:'POST',headers:{'x-admin-password':PW,'content-type':'image/jpeg'},body:await img(f)}),j=await r.json();if(!r.ok)throw 0;E.fotos.push({src:j.src,cat:$('#upcat').value,alt:''})}catch(x){msg('Não foi possível enviar a foto.')}}panel()})()});
 adm.addEventListener('click',async e=>{const b=e.target.closest('[data-a]');if(!b)return;const [a,k,i]=b.dataset.a.split(':');
 if(a=='close'){adm.style.display='none'}
