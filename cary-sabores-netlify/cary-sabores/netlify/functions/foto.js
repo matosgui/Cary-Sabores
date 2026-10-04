@@ -6,16 +6,18 @@ export default async (req) => {
   const s = getStore({ name: 'fotos', consistency: 'strong' });
   if (req.method === 'GET') {
     const id = new URL(req.url).searchParams.get('id');
-    const data = id ? await s.get(id, { type: 'arrayBuffer' }) : null;
-    if (!data) return new Response('Não encontrada', { status: 404 });
-    return new Response(data, { headers: { 'content-type': 'image/jpeg', 'cache-control': 'public, max-age=31536000, immutable' } });
+    const r = id ? await s.getWithMetadata(id, { type: 'arrayBuffer' }) : null;
+    if (!r || !r.data) return new Response('Não encontrada', { status: 404 });
+    return new Response(r.data, { headers: { 'content-type': (r.metadata && r.metadata.type) || 'image/jpeg', 'cache-control': 'public, max-age=31536000, immutable' } });
   }
   if (req.method === 'POST') {
     if (!(await okPw(req.headers.get('x-admin-password')))) return J({ error: 'Senha incorreta.' }, 401);
+    const type = (req.headers.get('content-type') || '').split(';')[0];
+    if (!['image/jpeg', 'image/png', 'image/webp'].includes(type)) return J({ error: 'Formato de imagem inválido.' }, 400);
     const buf = await req.arrayBuffer();
     if (!buf.byteLength || buf.byteLength > 3000000) return J({ error: 'Imagem inválida ou grande demais.' }, 400);
     const id = crypto.randomUUID();
-    await s.set(id, buf);
+    await s.set(id, buf, { metadata: { type } });
     return J({ src: '/api/foto?id=' + id });
   }
   return J({ error: 'Método inválido' }, 405);
