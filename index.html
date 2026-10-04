@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cary Sabores — Bolos em Iraquara, Bahia</title>
+<meta name="description" content="Cary Sabores: bolos personalizados, de aniversário e casamento em Iraquara – BA. Monte o seu bolo e peça pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style id="own-css">
+:root{--choc:#4e2316;--pink:#f7c9d4;--pink2:#fde8ee;--bg:#fff7f9;--card:#fff;--ink:#4a2a20;--muted:#8a6a62;--line:#f0d3da;--wa:#1f9d55;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a1712;--card:#3a2019;--ink:#fbe9ee;--muted:#d9b7be;--line:#5a3a33;--pink2:#442923;--pink:#e7a9b8}}
+:root[data-theme="dark"]{--bg:#2a1712;--card:#3a2019;--ink:#fbe9ee;--muted:#d9b7be;--line:#5a3a33;--pink2:#442923;--pink:#e7a9b8}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px;height:100%}
+body{margin:0;font-family:Nunito,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;margin:0;line-height:1.1}
+a{color:inherit}.wrap{max-width:1080px;margin:auto;padding:0 20px}
+section{padding:64px 0}h2{font-size:clamp(2rem,6vw,2.8rem);color:var(--choc);text-align:center}
+@media (prefers-color-scheme:dark){h2{color:var(--pink)}}
+.sub{text-align:center;color:var(--muted);max-width:560px;margin:10px auto 32px}
+.script{font-family:'Great Vibes',cursive}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 26px;border-radius:40px;border:2px solid var(--choc);background:var(--choc);color:#fff;font:700 .95rem Nunito,sans-serif;text-decoration:none;cursor:pointer;letter-spacing:.04em}
+.btn.alt{background:transparent;color:var(--choc);border-color:var(--choc)}
+.btn.wa{background:var(--wa);border-color:var(--wa);color:#fff}
+@media (prefers-color-scheme:dark){.btn.alt{color:#fff;border-color:var(--pink)}}
+header{position:sticky;top:0;z-index:20;background:var(--choc);color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+header .logo{font-family:'Great Vibes',cursive;font-size:1.9rem;text-decoration:none}
+nav{display:flex;gap:20px;font-size:.9rem}nav a{text-decoration:none;opacity:.9}
+@media(max-width:760px){nav{display:none}}
+.hero{background:linear-gradient(var(--choc) 0 90px,var(--pink2) 90px);padding:0;text-align:center}
+.hero .wrap{padding:36px 20px 70px}
+.badge{width:150px;height:150px;border-radius:50%;margin:0 auto 22px;background:#fff;border:6px solid var(--pink);outline:2px dotted var(--choc);outline-offset:-12px;display:grid;place-content:center;color:var(--choc);box-shadow:0 8px 24px #4e231633}
+.badge b{font-family:'Great Vibes',cursive;font-size:2rem;font-weight:400;line-height:1}.badge small{letter-spacing:.3em;font-size:.65rem}
+.hero h1{font-size:clamp(2.6rem,10vw,4.6rem);color:var(--choc);margin-top:8px}
+@media (prefers-color-scheme:dark){.hero{background:linear-gradient(var(--choc) 0 90px,var(--pink2) 90px)}.hero h1{color:var(--pink)}}
+.hero .tag{font-size:1.5rem;font-family:'Great Vibes',cursive;color:#b0506a;margin:6px 0 14px}
+.hero p{max-width:560px;margin:0 auto 26px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:22px}
+.chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:30px;padding:9px 16px;font:600 .9rem Nunito;cursor:pointer;min-height:44px}
+.chip.on{background:var(--choc);color:#fff;border-color:var(--choc)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr);gap:18px}}
+.ph{aspect-ratio:1;border-radius:18px;overflow:hidden;background:var(--pink2);border:1.5px dashed var(--pink);display:grid;place-content:center;text-align:center;color:var(--muted);font-size:.85rem;padding:10px;cursor:default}
+.ph img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;display:block}.ph:has(img){border:0}
+img.badge{display:block;object-fit:cover;padding:0;border:0;outline:0;background:none;width:170px;height:170px}
+#adm{display:none;position:fixed;inset:0;z-index:60;background:var(--bg);overflow:auto;padding:20px 0 60px}
+#adm .ahead{display:flex;justify-content:space-between;align-items:center}#adm .step{margin-bottom:14px}#adm input,#adm select{padding:9px 10px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:.92rem;max-width:100%}
+.ar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;align-items:center}.a4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px}.a4 input{width:100%}.a4 label{font-size:.78rem;color:var(--muted)}
+.alt-bg{background:var(--pink2)}
+.two{display:grid;gap:26px;align-items:center}@media(min-width:800px){.two{grid-template-columns:1fr 1.3fr}}
+.two h2{text-align:left}.two p{color:var(--muted)}
+.steps{display:grid;gap:16px}
+.step{background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:20px}
+.step h3{font-size:1.5rem;color:var(--choc);margin-bottom:4px}@media (prefers-color-scheme:dark){.step h3{color:var(--pink)}}
+.step h3 span{display:inline-grid;place-content:center;width:30px;height:30px;border-radius:50%;background:var(--pink);color:var(--choc);font:700 .95rem Nunito;margin-right:8px;vertical-align:middle}
+.step .hint{color:var(--muted);font-size:.88rem;margin:0 0 12px}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.opt{text-align:left;background:var(--bg);border:1.5px solid var(--line);color:var(--ink);border-radius:14px;padding:12px;font:600 .95rem Nunito;cursor:pointer;min-height:56px}
+.opt small{display:block;font-weight:400;color:var(--muted);font-size:.8rem}
+.opt.on{border-color:var(--choc);background:var(--pink2);box-shadow:inset 0 0 0 1.5px var(--choc)}
+textarea{width:100%;min-height:90px;border-radius:14px;border:1.5px solid var(--line);padding:12px;font:inherit;background:var(--bg);color:var(--ink)}
+.sum{background:var(--choc);color:#fff;border-radius:22px;padding:24px}
+.sum h3{font-size:1.9rem;color:var(--pink)}.sum dl{margin:12px 0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px}
+.sum dt{opacity:.7}.sum dd{margin:0;font-weight:600}
+.total{font-size:1.5rem;font-weight:700;margin:12px 0 4px;color:var(--pink)}.sum .note{font-size:.82rem;opacity:.8;margin:0 0 16px}
+.sum .btn{width:100%}
+.tab{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:18px;margin-top:20px;overflow-x:auto}
+.tab table{border-collapse:collapse;width:100%;min-width:320px;font-size:.92rem}.tab th,.tab td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right}.tab th:first-child,.tab td:first-child{text-align:left}
+.insta{text-align:center}.insta .grid{margin:24px 0}
+footer{background:var(--choc);color:#f6dfe5;padding:44px 0 90px;font-size:.95rem}
+footer .wrap{display:grid;gap:26px}@media(min-width:760px){footer .wrap{grid-template-columns:1.2fr 1fr 1fr}}
+footer .script{font-size:2.4rem;color:#fff}footer ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}footer a{text-decoration:none}footer a:hover{text-decoration:underline}
+.float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-content:center;box-shadow:0 6px 18px #0004}
+.float svg{width:32px;height:32px;fill:#fff}
+#lb{position:fixed;inset:0;background:#000d;display:none;place-content:center;z-index:50;padding:16px}#lb.on{display:grid}#lb img{max-width:100%;max-height:88vh;border-radius:12px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#inicio"><img data-logo alt="" style="height:44px;width:44px;vertical-align:middle;margin-right:8px">Cary Sabores</a>
+<nav><a href="#galeria">Nossos bolos</a><a href="#monte">Monte seu bolo</a><a href="#personalizados">Personalizados</a><a href="#casamento">Casamento</a><a href="#doces">Doces</a></nav></div></header>
+
+<main>
+<section class="hero" id="inicio"><div class="wrap">
+<img data-logo class="badge" alt="Cary Sabores Bolos">
+<h1>Cary Sabores</h1>
+<div class="tag">“Bolo é carinho em forma de comida!”</div>
+<p>Confeitaria em Iraquara, Bahia. Bolos personalizados, de aniversário e casamento, doces e sobremesas, feitos sob encomenda com muito cuidado.</p>
+<div class="ctas"><a class="btn" href="#galeria">VER NOSSOS BOLOS</a><a class="btn alt" href="#monte">MONTE O SEU BOLO</a><a class="btn wa" data-wa="Olá, Cary Sabores! Gostaria de fazer um pedido.">FAZER PEDIDO PELO WHATSAPP</a></div>
+</div></section>
+
+<section id="galeria"><div class="wrap">
+<h2>Nossos bolos</h2><p class="sub">Inspire-se com trabalhos reais da Cary Sabores.</p>
+<div class="filters" id="filters"></div><div class="grid" id="gal"></div>
+</div></section>
+
+<section class="alt-bg" id="aniversario"><div class="wrap two" data-cat="aniversario"></div></section>
+<section id="personalizados"><div class="wrap two" data-cat="personalizados"></div></section>
+<section class="alt-bg" id="casamento"><div class="wrap two" data-cat="casamento"></div></section>
+
+<section id="monte"><div class="wrap">
+<h2>Monte o seu bolo 🎂</h2><p class="sub">Escolha cada etapa e veja o valor estimado. Depois é só enviar pelo WhatsApp.</p>
+<div class="steps" id="steps"></div>
+<div class="step"><h3><span>6</span>Decoração / personalização</h3><p class="hint">Conte o tema, cores, nome, idade ou referências. Decoração personalizada é combinada com a confeitaria.</p><div class="opts" id="decoOpts" style="margin-bottom:12px"></div><textarea id="deco" placeholder="Ex.: tema, cores, nome e idade, foto de referência…"></textarea></div>
+<div class="step"><h3><span>7</span>Forma de pagamento</h3><p class="hint">O pagamento é combinado direto com a Cary pelo WhatsApp.</p><div class="opts" id="payOpts"></div></div>
+<div class="sum" id="sum" style="margin-top:16px"><h3>Seu bolo</h3><dl id="dl"></dl><div class="total" id="tot"></div><p class="note" id="note"></p><a class="btn wa" id="send">PEDIR PELO WHATSAPP</a></div>
+<div class="tab"><h3 style="font-size:1.3rem;margin-bottom:8px">Tabela de preços (cobertura + recheio simples)</h3><div id="tabela"></div><p class="hint" style="color:var(--muted);font-size:.85rem;margin:10px 0 0">Bolos com recheios especiais a combinar.</p></div>
+</div></section>
+
+<section class="alt-bg" id="doces"><div class="wrap">
+<h2>Doces e sobremesas</h2><p class="sub">Doces e sobremesas sob encomenda. Consulte opções e valores direto com a Cary.</p>
+<div class="grid" id="docesGrid"></div>
+<div style="text-align:center;margin-top:24px"><a class="btn wa" data-wa="Olá, Cary Sabores! Gostaria de fazer um pedido de doces e sobremesas.">FAZER PEDIDO</a></div>
+</div></section>
+
+<section class="insta" id="instagram"><div class="wrap">
+<h2>Acompanhe nosso trabalho</h2><p class="sub">Siga <b>@carinaazevedo2</b> no Instagram e veja novidades e bolos recentes.</p>
+<div class="grid" id="instaGrid"></div>
+<a class="btn" href="https://www.instagram.com/carinaazevedo2" target="_blank" rel="noopener">VER NO INSTAGRAM</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div><img data-logo alt="Cary Sabores" style="width:90px;height:90px;display:block;margin-bottom:8px"><div class="script">Cary Sabores</div><p>“Bolo é carinho em forma de comida!”</p><p>📍 Iraquara – Bahia<br>📱 WhatsApp: (75) 9 9812-8112<br>📸 Instagram: @carinaazevedo2<br>💳 Pagamento: <span id="pagTxt"></span></p></div>
+<ul><li><a href="#inicio">Início</a></li><li><a href="#galeria">Nossos bolos</a></li><li><a href="#monte">Monte seu bolo</a></li><li><a href="#personalizados">Bolos personalizados</a></li><li><a href="#casamento">Bolos de casamento</a></li><li><a href="#doces">Doces e sobremesas</a></li></ul>
+<ul><li><a href="https://www.instagram.com/carinaazevedo2" target="_blank" rel="noopener">Instagram</a></li><li><a data-wa="Olá, Cary Sabores! Gostaria de fazer um pedido.">WhatsApp</a></li><li><a href="#" id="admLink" style="opacity:.55;font-size:.85rem">Área administrativa</a></li></ul>
+</div></footer>
+
+<a class="float" data-wa="Olá, Cary Sabores! Gostaria de fazer um pedido." aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11 19.8L3 29l6.4-2A13 13 0 1 0 16 3zm0 2.4a10.6 10.6 0 1 1-5.5 19.7l-.4-.2-3.8 1.2 1.2-3.7-.3-.4A10.6 10.6 0 0 1 16 5.4zm-4 5.3c-.3 0-.7.1-1 .5-.4.4-1.300 1.300-1.300 3.100s1.400 3.600 1.500 3.800c.2.2 2.600 4.100 6.400 5.600 3.200 1.200 3.800 1 4.500.9.700-.1 2.200-.9 2.500-1.800.3-.9.3-1.600.2-1.800l-.6-.4-2.200-1.100c-.3-.1-.5-.2-.8.200l-1 1.200c-.2.200-.4.300-.7.100-.3-.2-1.400-.5-2.600-1.600-1-.9-1.600-2-1.800-2.300-.2-.3 0-.5.100-.7l.5-.6.300-.5v-.6l-1-2.400c-.2-.6-.5-.5-.7-.5z"/></svg></a>
+<div id="adm"></div>
+<div id="lb"><img alt=""></div>
+
+<script src="/api/data"></script>
+<script id="dataJs">
+const D=window.__D||{
+logo:'logo.png',
+doces:[],
+whats:'5575998128112',
+tamanhos:[{n:'P',cm:17,f:10},{n:'M',cm:22,f:25},{n:'G',cm:28,f:35},{n:'GG',cm:35,f:45}],
+/* tabela: 'branca' ou 'chocolate' (colunas do cardápio). null = o cardápio não informa; usa a coluna branca e marca "a confirmar" */
+massas:[{n:'Baunilha',t:'branca'},{n:'Formigueiro',t:null},{n:'Red Velvet',t:null},{n:'Chocolate',t:'chocolate'},{n:'Amanteigada',t:'branca'}],
+coberturas:[
+{n:'Ganache',d:'Cobertura ganache e recheio simples',p:{branca:[125,205,275,370],chocolate:[130,220,287,390]}},
+{n:'Brigadeiro',d:'Cobertura brigadeiro e recheio simples',p:{branca:[110,185,240,300],chocolate:[115,195,250,315]}},
+{n:'Chantininho',d:'Chantininho e recheio simples',p:{branca:[86,155,200,275],chocolate:[90,160,220,290]}}],
+recheios:['Brigadeiro (branco e preto)','Prestígio','Ninho','Ninho com Nutella','Ninho com morango','Maracujá','Abacaxi com coco','Doce de leite com coco','Doce de leite com ameixa','Churros','Morango'],
+geleias:{sabores:['Morango','Maracujá','Abacaxi','Ameixa'],p:[10,15,25,35]},
+nutella:[20,20,20,20],
+topos:[{n:'Morango',p:10},{n:'Bombons',p:15},{n:'Brigadeiro',p:20}],
+/* FOTOS: adicione {src:'fotos/bolo1.jpg', cat:'aniversario'|'personalizados'|'casamento'|'doces', alt:'descrição'} */
+fotos:[],
+instaFotos:[]
+};
+</script>
+<script id="mainJs">
+const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+const CATS={aniversario:['Bolos de aniversário','Bolos de Aniversário','Bolos feitos para comemorar cada ano com sabor e carinho. Escolha tamanho, massa, recheio e cobertura do cardápio.','FAZER PEDIDO','Olá, Cary Sabores! Gostaria de fazer um pedido de bolo de aniversário.'],
+personalizados:['Bolos personalizados','Bolos Personalizados','Todos os bolos são produzidos sob encomenda e podem ser personalizados de acordo com o tema e a ocasião.','SOLICITAR MEU BOLO','Olá, Cary Sabores! Gostaria de solicitar um bolo personalizado.'],
+casamento:['Bolos de casamento','Bolos de Casamento','Um bolo à altura do seu grande dia: elegante, delicado e feito com todo cuidado. Peça um orçamento sem compromisso.','SOLICITAR ORÇAMENTO','Olá, Cary Sabores! Gostaria de solicitar um orçamento para bolo de casamento.']};
+const $=s=>document.querySelector(s),R=v=>'R$ '+v.toLocaleString('pt-BR',{minimumFractionDigits:2});
+document.querySelectorAll('[data-logo]').forEach(i=>i.src=D.logo);
+const wa=t=>'https://wa.me/'+D.whats+'?text='+encodeURIComponent(t);
+document.querySelectorAll('[data-wa]').forEach(a=>{a.href=wa(a.dataset.wa);a.target='_blank';a.rel='noopener'});
+function tile(f,label){return f?`<div class="ph"><img loading="lazy" src="${f.src}" alt="${f.alt||'Bolo Cary Sabores'}"></div>`:`<div class="ph">${label||'Foto em breve'}</div>`}
+function tiles(list,n,label){let h=list.slice(0,n).map(f=>tile(f)).join('');for(let i=list.length;i<n;i++)h+=tile(null,label);return h}
+/* galeria */
+const fc=[['todos','Todos'],['aniversario','Bolos de aniversário'],['personalizados','Bolos personalizados'],['casamento','Bolos de casamento'],['doces','Doces e sobremesas']];
+let cur='todos';
+function gal(){$('#filters').innerHTML=fc.map(c=>`<button class="chip ${c[0]==cur?'on':''}" data-c="${c[0]}">${c[1]}</button>`).join('');
+const l=D.fotos.filter(f=>cur=='todos'||f.cat==cur);$('#gal').innerHTML=tiles(l,Math.max(6,l.length),'Foto em breve')}
+$('#filters').onclick=e=>{if(e.target.dataset.c){cur=e.target.dataset.c;gal()}};gal();
+/* seções por categoria */
+document.querySelectorAll('[data-cat]').forEach(s=>{const k=s.dataset.cat,c=CATS[k],l=D.fotos.filter(f=>f.cat==k);
+s.innerHTML=`<div><h2>${c[1]}</h2><p>${c[2]}</p><div class="ctas" style="justify-content:flex-start"><a class="btn wa" href="${wa(c[4])}" target="_blank" rel="noopener">${c[3]}</a><a class="btn alt" href="#monte">MONTE O SEU BOLO</a></div></div><div class="grid" style="grid-template-columns:repeat(2,1fr)">${tiles(l,4)}</div>`});
+{const ph=D.fotos.filter(f=>f.cat=='doces');$('#docesGrid').innerHTML=D.doces.map(x=>`<div class="step"><h3 style="font-size:1.4rem">${esc(x.n)}</h3><p class="hint" style="margin:4px 0">${esc(x.d)}</p><b>${x.p?R(+x.p):'Consulte'}</b></div>`).join('')+(ph.length||!D.doces.length?tiles(ph,ph.length||3,'Foto em breve'):'')}
+$('#instaGrid').innerHTML=tiles(D.instaFotos,3,'@carinaazevedo2');
+/* lightbox */
+document.addEventListener('click',e=>{if(e.target.matches('.ph img')){$('#lb img').src=e.target.src;$('#lb').classList.add('on')}else if(e.target.closest('#lb'))$('#lb').classList.remove('on')});
+/* configurador */
+const S={t:null,m:null,c:null,d:null,pg:null,r:new Set,g:new Set,n:false,tp:new Set};
+const o=(g,i,l,s='')=>`<button class="opt" data-g="${g}" data-i="${i}">${l}<small>${s}</small></button>`;
+$('#steps').innerHTML=[
+['1','Escolha o tamanho','',D.tamanhos.map((t,i)=>o('t',i,`${t.n} · ${t.cm}cm`,`${t.f} fatias`)).join('')],
+['2','Escolha a massa','',D.massas.map((m,i)=>o('m',i,m.n)).join('')],
+['3','Escolha o recheio','Pode marcar mais de um; a quantidade de recheios é combinada com a Cary. Recheio simples já incluso no preço. Bolos com recheios especiais a combinar.',D.recheios.map((r,i)=>o('r',i,r)).join('')],
+['4','Escolha a cobertura','O valor depende do tamanho e da massa.',D.coberturas.map((c,i)=>o('c',i,c.n,c.d)).join('')],
+['5','Geleias e adicionais','Valores variam conforme o tamanho.',D.geleias.sabores.map((g,i)=>o('g',i,'Geleia de '+g.toLowerCase(),'')).join('')+o('n',0,'Nutella','adicional')+D.topos.map((t,i)=>o('tp',i,'Topo: '+t.n,R(t.p))).join('')]
+].map(s=>`<div class="step"><h3><span>${s[0]}</span>${s[1]}</h3>${s[2]?`<p class="hint">${s[2]}</p>`:''}<div class="opts">${s[3]}</div></div>`).join('');
+D.decoracoes=D.decoracoes||[{n:'Básica',d:'Sem trabalho de bico',pct:0},{n:'Completa',d:'Com trabalho de bico, mais elaborada',pct:10}];
+D.pagamentos=D.pagamentos||['Pix','Dinheiro','Cartão'];
+$('#decoOpts').innerHTML=D.decoracoes.map((x,i)=>o('d',i,x.n,(x.d||'')+(x.pct?` · +${x.pct}% no valor`:' · mesmo valor'))).join('');
+$('#payOpts').innerHTML=D.pagamentos.map((x,i)=>o('pg',i,x)).join('');
+$('#pagTxt').textContent=D.pagamentos.join(', ');
+const pick=e=>{const b=e.target.closest('.opt');if(!b)return;const g=b.dataset.g,i=+b.dataset.i;
+if(['t','m','c','d','pg'].includes(g))S[g]=S[g]===i?null:i;else if(g=='n')S.n=!S.n;else S[g].has(i)?S[g].delete(i):S[g].add(i);upd()};
+['#steps','#decoOpts','#payOpts'].forEach(s=>$(s).onclick=pick);
+function sel(g,i){return g=='n'?S.n:['t','m','c','d','pg'].includes(g)?S[g]===i:S[g].has(i)}
+function calc(){const {t,m,c}=S;if(t==null||m==null||c==null)return null;const tb=D.massas[m].t||'branca';let v=D.coberturas[c].p[tb][t];
+S.g.forEach(()=>v+=D.geleias.p[t]);if(S.n)v+=D.nutella[t];S.tp.forEach(i=>v+=D.topos[i].p);if(S.d!=null)v*=1+(D.decoracoes[S.d].pct||0)/100;return Math.round(v*100)/100}
+function upd(){document.querySelectorAll('.opt').forEach(b=>b.classList.toggle('on',sel(b.dataset.g,+b.dataset.i)));
+const t=S.t,tb=S.m!=null?(D.massas[S.m].t||'branca'):null;
+document.querySelectorAll('[data-g=c]').forEach(b=>{const p=D.coberturas[+b.dataset.i].p;b.querySelector('small').textContent=D.coberturas[+b.dataset.i].d+(t!=null&&tb?' · '+R(p[tb][t]):'')});
+document.querySelectorAll('[data-g=g]').forEach(b=>b.querySelector('small').textContent=t!=null?'+ '+R(D.geleias.p[t]):'');
+const nb=document.querySelector('[data-g=n]');nb.querySelector('small').textContent=t!=null?'adicional · + '+R(D.nutella[t]):'adicional';
+const tm=t!=null?D.tamanhos[t]:null,L=a=>[...a.map?a:[]];
+const rows=[['Tamanho',tm?`${tm.n} · ${tm.cm}cm · ${tm.f} fatias`:'—'],['Massa',S.m!=null?D.massas[S.m].n:'—'],['Recheio(s)',S.r.size?[...S.r].map(i=>D.recheios[i]).join(', '):'—'],['Cobertura',S.c!=null?D.coberturas[S.c].n:'—'],
+['Adicionais',[...[...S.g].map(i=>'Geleia de '+D.geleias.sabores[i].toLowerCase()),...(S.n?['Nutella']:[]),...[...S.tp].map(i=>'Topo de '+D.topos[i].n.toLowerCase())].join(', ')||'—'],['Decoração',[S.d!=null?D.decoracoes[S.d].n:'',$('#deco').value.trim()].filter(Boolean).join(' — ')||'—'],['Pagamento',S.pg!=null?D.pagamentos[S.pg]:'—']];
+$('#dl').innerHTML=rows.map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('');
+const v=calc(),aconf=S.m!=null&&D.massas[S.m].t==null;
+$('#tot').textContent=v==null?'Valor estimado: escolha tamanho, massa e cobertura':'Valor estimado: '+R(v);
+$('#note').textContent='Valor estimado. O preço final pode variar conforme decoração e personalização.'+(aconf?' Para esta massa, confirme a tabela de preço com a Cary.':'');
+const msg=`Olá, Cary Sabores! Gostaria de fazer um pedido.\n\n🎂 *Meu bolo:*\n`+rows.map(r=>`${r[0]}: ${r[1]}`).join('\n')+`\n\n💰 Valor estimado: ${v==null?'a confirmar':R(v)}\n\nGostaria de verificar a disponibilidade e finalizar o pedido.`;
+$('#send').href=wa(msg);$('#send').target='_blank';$('#send').rel='noopener'}
+$('#deco').oninput=upd;upd();
+/* tabela */
+$('#tabela').innerHTML=D.coberturas.map(c=>`<table><tr><th>${c.n}</th>${D.tamanhos.map(t=>`<th>${t.n} ${t.cm}cm</th>`).join('')}</tr>`+['branca','chocolate'].map(k=>`<tr><td>Massa ${k=='branca'?'branca':'chocolate'}</td>${c.p[k].map(p=>`<td>${R(p)}</td>`).join('')}</tr>`).join('')+'</table>').join('<br>')+
+`<br><table><tr><th>Adicionais</th>${D.tamanhos.map(t=>`<th>${t.cm}cm</th>`).join('')}</tr><tr><td>Geleia (qualquer sabor)</td>${D.geleias.p.map(p=>`<td>${R(p)}</td>`).join('')}</tr><tr><td>Nutella</td>${D.nutella.map(p=>`<td>${R(p)}</td>`).join('')}</tr></table>`;
+/* ====== ÁREA ADMINISTRATIVA ====== */
+let E,authed=false,PW='';
+const inp=(p,v,t='text',x='')=>`<input data-p="${p}" type="${t}" ${t=='number'?'step="0.01" min="0"':''} value="${esc(v)}" ${x}>`;
+const setP=(p,v)=>{const k=p.split('.');let o=E;for(let i=0;i<k.length-1;i++)o=o[k[i]];o[k[k.length-1]]=v};
+const SZ=D.tamanhos.map(t=>t.n+' '+t.cm+'cm');
+const row4=(base,arr)=>`<div class="a4">${arr.map((v,i)=>`<label>${SZ[i]}${inp(base+'.'+i,v,'number')}</label>`).join('')}</div>`;
+const lst=(k,items,fields)=>items.map((x,i)=>`<div class="ar">${fields(x,i)}<button class="chip" data-a="del:${k}:${i}">✕</button></div>`).join('')+`<button class="chip" data-a="add:${k}">+ Adicionar</button>`;
+function panel(){const a=$('#adm'),y=a.scrollTop;
+a.innerHTML=`<div class="wrap"><div class="ahead"><h2 style="text-align:left">Administração</h2><button class="chip" data-a="close">Fechar</button></div>
+<p class="sub" style="text-align:left;margin:0 0 16px">Altere valores, produtos e fotos. As mudanças só valem para os clientes depois de “Salvar alterações”.</p>
+<div class="step"><h3>Coberturas e preços</h3>${E.coberturas.map((c,ci)=>`<p><b>${inp(`coberturas.${ci}.n`,c.n)}</b></p><p class="hint">Massa branca</p>${row4(`coberturas.${ci}.p.branca`,c.p.branca)}<p class="hint">Massa chocolate</p>${row4(`coberturas.${ci}.p.chocolate`,c.p.chocolate)}`).join('')}</div>
+<div class="step"><h3>Adicional de Nutella</h3>${row4('nutella',E.nutella)}</div>
+<div class="step"><h3>Geleias</h3><p class="hint">Preço por tamanho</p>${row4('geleias.p',E.geleias.p)}<p class="hint">Sabores</p>${lst('gs',E.geleias.sabores,(x,i)=>inp('geleias.sabores.'+i,x))}</div>
+<div class="step"><h3>Topos</h3>${lst('topos',E.topos,(x,i)=>inp(`topos.${i}.n`,x.n)+inp(`topos.${i}.p`,x.p,'number'))}</div>
+<div class="step"><h3>Massas</h3><p class="hint">Tabela de preço usada por cada massa</p>${lst('massas',E.massas,(x,i)=>inp(`massas.${i}.n`,x.n)+`<select data-p="massas.${i}.t">${[['branca','Branca'],['chocolate','Chocolate'],['','A confirmar']].map(o=>`<option value="${o[0]}" ${(x.t||'')==o[0]?'selected':''}>${o[1]}</option>`).join('')}</select>`)}</div>
+<div class="step"><h3>Recheios</h3>${lst('recheios',E.recheios,(x,i)=>inp('recheios.'+i,x))}</div>
+<div class="step"><h3>Doces e sobremesas</h3>${lst('doces',E.doces,(x,i)=>inp(`doces.${i}.n`,x.n,'text','placeholder="Nome"')+inp(`doces.${i}.p`,x.p,'number','placeholder="Preço"')+inp(`doces.${i}.d`,x.d,'text','placeholder="Descrição"'))}</div>
+<div class="step"><h3>Fotos</h3><p class="hint">Envie fotos reais e escolha a categoria. Elas são reduzidas automaticamente.</p>
+<div class="ar"><select id="upcat">${fc.slice(1).map(c=>`<option value="${c[0]}">${c[1]}</option>`).join('')}</select><input id="upf" type="file" accept="image/*" multiple></div>
+<div class="grid" style="margin-top:12px">${E.fotos.map((f,i)=>`<div><div class="ph"><img src="${f.src}" alt=""></div><select data-p="fotos.${i}.cat">${fc.slice(1).map(c=>`<option value="${c[0]}" ${f.cat==c[0]?'selected':''}>${c[1]}</option>`).join('')}</select><button class="chip" data-a="del:fotos:${i}">Remover</button></div>`).join('')}</div></div>
+<div class="step"><h3>Logo</h3><div class="ar"><img src="${E.logo}" alt="" style="width:80px;height:80px;border-radius:50%;object-fit:cover"><input id="uplogo" type="file" accept="image/*"></div><p class="hint">Envie a nova logo (de preferência PNG, quadrada). Depois clique em Salvar alterações.</p></div>
+<div class="step"><h3>Decoração</h3><p class="hint">Acréscimo em % sobre o valor do bolo (0 = mantém o valor).</p>${lst('decoracoes',E.decoracoes,(x,i)=>inp(`decoracoes.${i}.n`,x.n)+inp(`decoracoes.${i}.d`,x.d,'text','placeholder="Descrição"')+inp(`decoracoes.${i}.pct`,x.pct,'number','style="width:90px" placeholder="%"'))}</div>
+<div class="step"><h3>Formas de pagamento</h3>${lst('pagamentos',E.pagamentos,(x,i)=>inp('pagamentos.'+i,x))}</div>
+<div class="step"><h3>Senha</h3><input id="newpw" type="password" placeholder="Nova senha (deixe vazio para manter)"></div>
+<div class="ctas" style="margin:20px 0"><button class="btn" data-a="save">SALVAR ALTERAÇÕES</button></div><p id="amsg" class="hint"></p></div>`;a.scrollTop=y}
+const msg=t=>{$('#amsg').textContent=t};
+async function openAdm(){const a=$('#adm');a.style.display='block';
+if(authed)return panel();
+a.innerHTML=`<div class="wrap" style="max-width:380px;padding-top:80px;text-align:center"><h2>Área administrativa</h2><p class="sub">Digite a senha.</p><input id="pw" type="password" style="width:100%;padding:14px;border-radius:14px;border:1.5px solid var(--line);margin-bottom:12px"><button class="btn" data-a="login" style="width:100%">ENTRAR</button><p id="amsg" class="hint"></p><button class="chip" data-a="close">Fechar</button></div>`}
+const api=async b=>{try{const r=await fetch('/api/data',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(b)});const j=await r.json().catch(()=>({}));return r.ok?{ok:true}:{err:j.error||'Erro '+r.status}}catch(x){return{err:'Sem conexão com o servidor.'}}};
+async function save(){msg('Salvando…');const np=$('#newpw').value,r=await api({action:'save',password:PW,data:E,newPassword:np||undefined});
+if(r.ok){if(np)PW=np;msg('Salvo! Atualizando a página…');setTimeout(()=>location.reload(),800)}else msg(r.err)}
+function img(f,type='image/jpeg',max=1000){return new Promise(r=>{const i=new Image();i.onload=()=>{const s=Math.min(1,max/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*s;c.height=i.height*s;c.getContext('2d').drawImage(i,0,0,c.width,c.height);c.toBlob(r,type,.82)};i.src=URL.createObjectURL(f)})}
+const NEW={decoracoes:['decoracoes',{n:'',d:'',pct:0}],pagamentos:['pagamentos',''],gs:['geleias.sabores',''],topos:['topos',{n:'',p:0}],massas:['massas',{n:'',t:null}],recheios:['recheios',''],doces:['doces',{n:'',p:0,d:''}]};
+const arrOf=k=>k=='gs'?E.geleias.sabores:E[k];
+$('#admLink').onclick=e=>{e.preventDefault();openAdm()};
+const adm=$('#adm');
+adm.addEventListener('input',e=>{const p=e.target.dataset.p;if(!p)return;const v=e.target.type=='number'?(parseFloat(e.target.value)||0):e.target.value;setP(p,p.endsWith('.t')&&v===''?null:v)});
+adm.addEventListener('change',e=>{const p=e.target.dataset.p;if(p&&e.target.tagName=='SELECT')setP(p,p.endsWith('.t')&&!e.target.value?null:e.target.value);
+if(e.target.id=='uplogo')(async()=>{const f=e.target.files[0];if(!f)return;msg('Enviando logo…');try{const r=await fetch('/api/foto',{method:'POST',headers:{'x-admin-password':PW,'content-type':'image/png'},body:await img(f,'image/png',400)}),j=await r.json();if(!r.ok)throw 0;E.logo=j.src;panel();msg('Logo enviada. Clique em Salvar alterações.')}catch(x){msg('Não foi possível enviar a logo.')}})();
+if(e.target.id=='upf')(async()=>{for(const f of e.target.files){msg('Enviando foto…');try{const r=await fetch('/api/foto',{method:'POST',headers:{'x-admin-password':PW,'content-type':'image/jpeg'},body:await img(f)}),j=await r.json();if(!r.ok)throw 0;E.fotos.push({src:j.src,cat:$('#upcat').value,alt:''})}catch(x){msg('Não foi possível enviar a foto.')}}panel()})()});
+adm.addEventListener('click',async e=>{const b=e.target.closest('[data-a]');if(!b)return;const [a,k,i]=b.dataset.a.split(':');
+if(a=='close'){adm.style.display='none'}
+else if(a=='login'){const r=await api({action:'login',password:$('#pw').value});if(r.ok){authed=true;PW=$('#pw').value;E=JSON.parse(JSON.stringify(D));panel()}else msg(r.err)}
+else if(a=='add'){arrOf(k).push(JSON.parse(JSON.stringify(NEW[k][1])));panel()}
+else if(a=='del'){arrOf(k).splice(+i,1);panel()}
+else if(a=='save')save()});
+</script>
+</body>
+</html>
